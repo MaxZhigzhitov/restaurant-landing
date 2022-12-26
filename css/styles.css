@@ -523,13 +523,8 @@ h3 {
 .footer__socials-logos {
   display: flex;
   gap: 20px;
+  font-size: 40px;
 }
 .footer__socials-logos a {
   flex: 1 1 auto;
-}
-.footer__socials-logos img {
-  fill: #ee6983;
-  display: block;
-  width: 50px;
-  height: auto;
 }
