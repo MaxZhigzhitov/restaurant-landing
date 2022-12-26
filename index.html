@@ -79,12 +79,26 @@
             <div class="slider-controls">
               <!-- slider dots -->
               <ul>
-                <li></li>
+                <li class="active"></li>
                 <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
               </ul>
+
+              <!-- side buttons -->
+              <button class="slider-control-btn left">
+                <img
+                  src="assets/svg/chevron_left_FILL0_wght400_GRAD0_opsz48.svg"
+                  alt=""
+                />
+              </button>
+              <button class="slider-control-btn right">
+                <img
+                  src="assets/svg/chevron_right_FILL0_wght400_GRAD0_opsz48.svg"
+                  alt=""
+                />
+              </button>
             </div>
             <a class="button button--accent" href="#">Go to cafes</a>
           </div>
@@ -208,10 +222,11 @@
                     <input
                       class="add-control"
                       type="number"
-                      id=""
+                      name="dish-count"
+                      id="dish-count"
                       min="0"
                       value="1"
-                      disabled
+                      tabindex="-1"
                     />
                     <span class="add-input__btn rem">-</span>
                     <span class="add-input__btn add">+</span>
@@ -263,8 +278,8 @@
                   iste aliquam.
                 </p>
                 <div class="weight-container weight-container--small">
-                  <span class="weight-container_text key">Вес:</span>
-                  <span class="weight-container_text value">350г.</span>
+                  <span class="weight-container__text key">Вес:</span>
+                  <span class="weight-container__text value">350г.</span>
                   <div class="add-input">
                     <input
                       class="add-control"
@@ -302,8 +317,8 @@
                   iste aliquam.
                 </p>
                 <div class="weight-container weight-container--small">
-                  <span class="weight-container_text key">Вес:</span>
-                  <span class="weight-container_text value">350г.</span>
+                  <span class="weight-container__text key">Вес:</span>
+                  <span class="weight-container__text value">350г.</span>
                   <div class="add-input">
                     <input
                       class="add-control"
@@ -337,8 +352,8 @@
                   iste aliquam.
                 </p>
                 <div class="weight-container weight-container--small">
-                  <span class="weight-container_text key">Вес:</span>
-                  <span class="weight-container_text value">350г.</span>
+                  <span class="weight-container__text key">Вес:</span>
+                  <span class="weight-container__text value">350г.</span>
                   <div class="add-input">
                     <input
                       class="add-control"
@@ -372,8 +387,8 @@
                   iste aliquam.
                 </p>
                 <div class="weight-container weight-container--small">
-                  <span class="weight-container_text key">Вес:</span>
-                  <span class="weight-container_text value">350г.</span>
+                  <span class="weight-container__text key">Вес:</span>
+                  <span class="weight-container__text value">350г.</span>
                   <div class="add-input">
                     <input
                       class="add-control"
@@ -407,8 +422,8 @@
                   iste aliquam.
                 </p>
                 <div class="weight-container weight-container--small">
-                  <span class="weight-container_text key">Вес:</span>
-                  <span class="weight-container_text value">350г.</span>
+                  <span class="weight-container__text key">Вес:</span>
+                  <span class="weight-container__text value">350г.</span>
                   <div class="add-input">
                     <input
                       class="add-control"
@@ -436,7 +451,7 @@
       <div class="container container--fullwidth">
         <section class="mail section-col" id="mail">
           <h2 class="title title--seciton">Будь в курсе последних событий</h2>
-          <form class="mail__form" action="#">
+          <form class="mail__form" action="">
             <div class="mail__item-container">
               <div class="mail__form-item">
                 <label for="username">Ваше имя</label>
@@ -490,5 +505,7 @@
         </footer>
       </div>
     </main>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
