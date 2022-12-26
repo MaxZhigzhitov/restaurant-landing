@@ -203,6 +203,10 @@ h3 {
   margin-bottom: 30px;
 }
 
+.dish {
+  margin-bottom: 50px;
+}
+
 .dish__title-bg {
   background-color: #ee6983;
   border-radius: 8px;
@@ -367,4 +371,6 @@ h3 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 1em 0px;
+  margin-bottom: 50px;
 }
