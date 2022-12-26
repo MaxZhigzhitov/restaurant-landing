@@ -240,7 +240,7 @@
         </section>
 
         <section class="menu-popular" id="menu-popular">
-          <div class="menu-popular__flex-container">
+          <div class="menu-popular__grid-container">
             <div class="menu-popular__item">
               <img
                 src="assets/thomas-antonio-RN78WIJLDDE-unsplash.jpg"
@@ -426,24 +426,29 @@
           </div>
           <a class="button button--accent" href="#">Go to menu</a>
         </section>
-
-        <section class="mail" id="mail">
+      </div>
+      <div class="container container--fullwidth">
+        <section class="mail section-col" id="mail">
           <h2 class="title title--seciton">Будь в курсе последних событий</h2>
           <form class="mail__form" action="#">
-            <div class="mail__form-item">
-              <label for="username">Ваше имя</label>
-              <input type="text" name="username" id="username" />
-            </div>
-            <div class="mail__form-item">
-              <label for="usermail">Ваш E-mail</label>
-              <input type="email" name="usermail" id="usermail" />
+            <div class="mail__item-container">
+              <div class="mail__form-item">
+                <label for="username">Ваше имя</label>
+                <input type="text" name="username" id="username" />
+              </div>
+              <div class="mail__form-item">
+                <label for="usermail">Ваш E-mail</label>
+                <input type="email" name="usermail" id="usermail" />
+              </div>
             </div>
 
-            <button class="mail__btn button button--accent">Подписаться</button>
+            <button class="mail__btn button button--accent" type="submit">
+              Подписаться
+            </button>
           </form>
         </section>
       </div>
-      <div class="container--wide">
+      <div class="container container--fullwidth">
         <footer class="footer" id="footer">
           <a class="header__logo" href="#"
             ><img src="assets/svg/logo.svg" alt="logo image"
