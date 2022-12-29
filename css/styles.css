@@ -87,6 +87,28 @@ h3 {
   background: #fff;
 }
 
+.scroll-style {
+  padding-right: 12px;
+  scrollbar-color: transparent;
+  scrollbar-width: 6px;
+}
+
+.scroll-style::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+}
+
+.scroll-style::-webkit-scrollbar-thumb {
+  background-color: #383838;
+  width: 6px;
+  transition: all 0.3s ease;
+}
+
+.scroll-style:hover.scroll-style::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: #16161772;
+}
+
 .container {
   max-width: 920px;
   margin: 0 auto;
