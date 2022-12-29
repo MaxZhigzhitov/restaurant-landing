@@ -568,7 +568,7 @@ h3{
 
 .menu-popular__grid-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-bottom: 30px;
     width: 100%;
@@ -581,12 +581,11 @@ h3{
 }
 
 .menu-popular__item{
-    flex:  1 1 calc(100% / 4);
     position: relative;
 
+    // flex:  1 1 calc(100% / 4);
     display: flex;
     flex-direction: column;
-
     
 
 
@@ -599,6 +598,7 @@ h3{
         display: flex;
         flex-direction: column;
         padding: 10px;
+        flex: 1 1 100%;
     }
 
 
@@ -612,14 +612,18 @@ h3{
     & p{
         flex: 1 1 auto;
         overflow-y: auto;
-        height: 180px;
-        margin-bottom: 30px;
-
+        max-height: 150px;
+        margin-bottom: auto;
     }
 
     & img{
         border-radius: 5px 5px 0px 0px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        object-position: top left;
+        flex: 1 0 auto;
     }
 
     & button{
@@ -634,6 +638,11 @@ h3{
         color:$color-header;
         font-size: 1.5rem;
         line-height: 1.2;
+    }
+
+    .weight-container{
+        margin-top: 30px;
+        margin-bottom: 15px;
     }
 }
 
