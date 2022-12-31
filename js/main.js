@@ -1,26 +1,73 @@
 // dish quantity controls
 /*----------------------------------*/
 
-const remBtn = document.querySelector('.add-input__btn.rem');
-const addBtn = document.querySelector('.add-input__btn.add');
-const dishNumber = document.querySelector('.add-control');
+const menuForms = [];
+const dishCounters = [];
+let dishNumberStored = 0;
 
-addBtn.addEventListener("click", function(){
-    let dishNumberStored = dishNumber.getAttribute("value");
 
-    console.log(dishNumberStored)
-    dishNumberStored++;
-    dishNumber.setAttribute("value", dishNumberStored);
-})
+//получаем все формы меню
 
-remBtn.addEventListener("click", function(){
-    let dishNumberStored = dishNumber.getAttribute("value");
+for(i = 0; i < document.forms.length; i++){
+    if(document.forms[i].classList.contains('dishday-form') || document.forms[i].classList.contains('popular-dish-form')){
+        menuForms.push(document.forms[i])
+    }
+}
+console.log(menuForms);
 
-    console.log(dishNumberStored)
-    dishNumberStored--;
-    dishNumber.setAttribute("value", dishNumberStored);
-})
+//получаем все счетчики количества блюд
 
+for(i = 0; i < menuForms.length; i++){
+    for(j = 0; j < menuForms[i].elements.length; j++){
+        if(menuForms[i].elements[j].getAttribute("name") === "dish-count"){
+            dishCounters.push(menuForms[i].elements[j]);
+        }else{
+            console.log('skip');
+        }
+        
+    }
+}
+console.log(dishCounters);
+
+
+const remButtons = [];
+const addButtons = [];
+
+//получаем кнопки меньше/больше для каждой формы
+
+for(i = 0; i < menuForms.length; i++){
+    remButtons.push(document.forms[i].remInputBtn);
+    
+    addButtons.push(document.forms[i].addInputBtn);
+}
+
+remButtons.forEach((item,index) => {
+    item.addEventListener('click', function(){
+        if(dishCounters[index].getAttribute('value') > 1){
+            console.log(this.form);
+
+            dishNumberStored = dishCounters[index].getAttribute('value');
+            console.log(dishNumberStored);
+            dishNumberStored--;
+
+            dishCounters[index].setAttribute('value', dishNumberStored);  
+        }      
+    })
+});
+addButtons.forEach((item,index) => {
+    item.addEventListener('click', function(){
+        console.log(this.form);
+
+        dishNumberStored = dishCounters[index].getAttribute('value');
+        console.log(dishNumberStored);
+        dishNumberStored++;
+
+        dishCounters[index].setAttribute('value', dishNumberStored);
+    })
+});
+
+console.log(remButtons);
+console.log(addButtons);
 
 // hide header when user scrolls down
 // and show when scroll up
