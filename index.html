@@ -64,36 +64,57 @@
         </section>
 
         <section class="about section-col" id="about">
-          <div class="carousel">
-            <div class="slider">
-              <div class="slider-item">
-                <h3 class="title title--slider">
-                  All the Tastiest That You Can Eat... Is Here!
-                </h3>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo
-                  eveniet error, tempore vitae officiis qui ab.
-                </p>
+          <div class="carousel-container">
+            <div class="carousel">
+              <div class="slider">
+                <div class="slider-item">
+                  <h3 class="title title--slider">
+                    All the Tastiest That You Can Eat... Is Here!
+                  </h3>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Illo eveniet error, tempore vitae officiis qui ab.
+                  </p>
+                </div>
+                <div class="slider-item">
+                  <h3 class="title title--slider">SLIDER ITEM 2</h3>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Illo eveniet error, tempore vitae officiis qui ab.
+                  </p>
+                </div>
+                <div class="slider-item">
+                  <h3 class="title title--slider">
+                    All the Tastiest That You Can Eat... Is Here!
+                  </h3>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Illo eveniet error, tempore vitae officiis qui ab.
+                  </p>
+                </div>
+                <div class="slider-item">
+                  <h3 class="title title--slider">SLIDER ITEM 2</h3>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Illo eveniet error, tempore vitae officiis qui ab.
+                  </p>
+                </div>
               </div>
             </div>
             <div class="slider-controls">
               <!-- slider dots -->
               <ul>
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><button class="active"></button></li>
               </ul>
 
               <!-- side buttons -->
-              <button class="slider-control-btn left">
+              <button tabindex="-1" class="slider-btn left">
                 <img
                   src="assets/svg/chevron_left_FILL0_wght400_GRAD0_opsz48.svg"
                   alt=""
                 />
               </button>
-              <button class="slider-control-btn right">
+              <button tabindex="-1" class="slider-btn right">
                 <img
                   src="assets/svg/chevron_right_FILL0_wght400_GRAD0_opsz48.svg"
                   alt=""
@@ -165,7 +186,7 @@
                 </p>
               </div>
 
-              <form class="dish__client-form" action="">
+              <form class="dishday-form" action="">
                 <div class="dish__rating-container">
                   <div class="dish__star-rating">
                     <div class="star__items">
@@ -231,8 +252,20 @@
                       value="1"
                       tabindex="-1"
                     />
-                    <span class="add-input__btn rem">-</span>
-                    <span class="add-input__btn add">+</span>
+                    <button
+                      name="remInputBtn"
+                      type="button"
+                      class="add-input__btn rem"
+                    >
+                      -
+                    </button>
+                    <button
+                      name="addInputBtn"
+                      type="button"
+                      class="add-input__btn add"
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
                 <div class="dish__order-section">
@@ -270,7 +303,7 @@
                 src="assets/thomas-antonio-RN78WIJLDDE-unsplash.jpg"
                 alt="menu item image"
               />
-              <div class="menu-popular__info">
+              <div class="menu-popular__padding">
                 <h3 class="title menu-item-title">Наименование</h3>
 
                 <!-- <p class="menu-popular__description scroll-style">
@@ -284,33 +317,256 @@
                     adipisicing elit. At debitis beatae cumque accusantium
                     commodi perspiciatis. Voluptatibus eaque fuga laborum
                     distinctio asperiores, quo adipisci eius ipsum qui
-                    voluptatem praesentium iste aliquam.
+                    voluptatem praesentium iste aliquam. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Architecto obcaecati
+                    fugit perferendis quidem esse quod iure quia quaerat fuga
+                    debitis. Hic eaque sapiente rerum explicabo deleniti
+                    voluptatum ducimus, dolorum unde? Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Fuga dolore vero nisi nobis
+                    consectetur iusto?
                   </p>
                 </div>
-                <div class="weight-container weight-container--small">
-                  <span class="weight-container__text key">Вес:</span>
-                  <span class="weight-container__text value">350г.</span>
-                  <div class="add-input">
-                    <input
-                      class="add-control"
-                      type="number"
-                      id=""
-                      min="0"
-                      value="1"
-                      disabled
-                    />
-                    <span class="add-input__btn rem">-</span>
-                    <span class="add-input__btn add">+</span>
-                  </div>
-                </div>
-                <span>50$</span>
               </div>
-              <button class="button button--accent">Order now</button>
+              <form class="popular-dish-form" action="">
+                <div class="menu-popular__padding">
+                  <div class="weight-container weight-container--small">
+                    <span class="weight-container__text key">Вес:</span>
+                    <span class="weight-container__text value">350г.</span>
+                    <div class="add-input">
+                      <input
+                        class="add-control"
+                        type="number"
+                        name="dish-count"
+                        id="popular-dish-count"
+                        min="0"
+                        value="1"
+                        tabindex="-1"
+                      />
+                      <button
+                        name="remInputBtn"
+                        type="button"
+                        class="add-input__btn rem"
+                      >
+                        -
+                      </button>
+                      <button
+                        name="addInputBtn"
+                        type="button"
+                        class="add-input__btn add"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <span>50$</span>
+                </div>
+                <button class="button button--accent" type="submit">
+                  Order now
+                </button>
+              </form>
             </div>
 
             <!-- Скопировать остальные карточки между этими линиями -->
             <!-- -------------- -->
+            <div class="menu-popular__item">
+              <img
+                src="assets/thomas-antonio-RN78WIJLDDE-unsplash.jpg"
+                alt="menu item image"
+              />
+              <div class="menu-popular__padding">
+                <h3 class="title menu-item-title">Наименование</h3>
 
+                <!-- <p class="menu-popular__description scroll-style">
+                  
+                </p> -->
+
+                <div class="menu-popular__description scroll-style">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Excepturi, dolor? Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. At debitis beatae cumque accusantium
+                    commodi perspiciatis. Voluptatibus eaque fuga laborum
+                    distinctio asperiores, quo adipisci eius ipsum qui
+                    voluptatem praesentium iste aliquam. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Architecto obcaecati
+                    fugit perferendis quidem esse quod iure quia quaerat fuga
+                    debitis. Hic eaque sapiente rerum explicabo deleniti
+                    voluptatum ducimus, dolorum unde? Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Fuga dolore vero nisi nobis
+                    consectetur iusto?
+                  </p>
+                </div>
+              </div>
+              <form class="popular-dish-form" action="">
+                <div class="menu-popular__padding">
+                  <div class="weight-container weight-container--small">
+                    <span class="weight-container__text key">Вес:</span>
+                    <span class="weight-container__text value">350г.</span>
+                    <div class="add-input">
+                      <input
+                        class="add-control"
+                        type="number"
+                        name="dish-count"
+                        id="popular-dish-count"
+                        min="0"
+                        value="1"
+                        tabindex="-1"
+                      />
+                      <button
+                        name="remInputBtn"
+                        type="button"
+                        class="add-input__btn rem"
+                      >
+                        -
+                      </button>
+                      <button
+                        name="addInputBtn"
+                        type="button"
+                        class="add-input__btn add"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <span>50$</span>
+                </div>
+                <button class="button button--accent" type="submit">
+                  Order now
+                </button>
+              </form>
+            </div>
+            <div class="menu-popular__item">
+              <img
+                src="assets/thomas-antonio-RN78WIJLDDE-unsplash.jpg"
+                alt="menu item image"
+              />
+              <div class="menu-popular__padding">
+                <h3 class="title menu-item-title">Наименование</h3>
+
+                <!-- <p class="menu-popular__description scroll-style">
+                  
+                </p> -->
+
+                <div class="menu-popular__description scroll-style">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Excepturi, dolor? Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. At debitis beatae cumque accusantium
+                    commodi perspiciatis. Voluptatibus eaque fuga laborum
+                    distinctio asperiores, quo adipisci eius ipsum qui
+                    voluptatem praesentium iste aliquam. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Architecto obcaecati
+                    fugit perferendis quidem esse quod iure quia quaerat fuga
+                    debitis. Hic eaque sapiente rerum explicabo deleniti
+                    voluptatum ducimus, dolorum unde? Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Fuga dolore vero nisi nobis
+                    consectetur iusto?
+                  </p>
+                </div>
+              </div>
+              <form class="popular-dish-form" action="">
+                <div class="menu-popular__padding">
+                  <div class="weight-container weight-container--small">
+                    <span class="weight-container__text key">Вес:</span>
+                    <span class="weight-container__text value">350г.</span>
+                    <div class="add-input">
+                      <input
+                        class="add-control"
+                        type="number"
+                        name="dish-count"
+                        id="popular-dish-count"
+                        min="0"
+                        value="1"
+                      />
+                      <button
+                        name="remInputBtn"
+                        type="button"
+                        class="add-input__btn rem"
+                      >
+                        -
+                      </button>
+                      <button
+                        name="addInputBtn"
+                        type="button"
+                        class="add-input__btn add"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <span>50$</span>
+                </div>
+                <button class="button button--accent" type="submit">
+                  Order now
+                </button>
+              </form>
+            </div>
+            <div class="menu-popular__item">
+              <img
+                src="assets/thomas-antonio-RN78WIJLDDE-unsplash.jpg"
+                alt="menu item image"
+              />
+              <div class="menu-popular__padding">
+                <h3 class="title menu-item-title">Наименование</h3>
+
+                <!-- <p class="menu-popular__description scroll-style">
+                  
+                </p> -->
+
+                <div class="menu-popular__description scroll-style">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Excepturi, dolor? Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. At debitis beatae cumque accusantium
+                    commodi perspiciatis. Voluptatibus eaque fuga laborum
+                    distinctio asperiores, quo adipisci eius ipsum qui
+                    voluptatem praesentium iste aliquam. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Architecto obcaecati
+                    fugit perferendis quidem esse quod iure quia quaerat fuga
+                    debitis. Hic eaque sapiente rerum explicabo deleniti
+                    voluptatum ducimus, dolorum unde? Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Fuga dolore vero nisi nobis
+                    consectetur iusto?
+                  </p>
+                </div>
+              </div>
+              <form class="popular-dish-form" action="">
+                <div class="menu-popular__padding">
+                  <div class="weight-container weight-container--small">
+                    <span class="weight-container__text key">Вес:</span>
+                    <span class="weight-container__text value">350г.</span>
+                    <div class="add-input">
+                      <input
+                        class="add-control"
+                        type="number"
+                        name="dish-count"
+                        id="popular-dish-count"
+                        min="0"
+                        value="1"
+                      />
+                      <button
+                        name="remInputBtn"
+                        type="button"
+                        class="add-input__btn rem"
+                      >
+                        -
+                      </button>
+                      <button
+                        name="addInputBtn"
+                        type="button"
+                        class="add-input__btn add"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <span>50$</span>
+                </div>
+                <button class="button button--accent" type="submit">
+                  Order now
+                </button>
+              </form>
+            </div>
             <!-- ----------- -->
             <!-- Конец меню -->
           </div>
@@ -376,5 +632,6 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/myslider.js"></script>
   </body>
 </html>
