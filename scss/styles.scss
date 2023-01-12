@@ -146,6 +146,7 @@ h3{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0px 30px;
     position: fixed;
     left: 0;
     right: 0;
@@ -156,9 +157,18 @@ h3{
     transition: opacity 0.35s ease;
 
     height: 80px;
+    max-width: 100vw;
     background-color: rgba(0,0,0, 0.5);
     border-bottom: 2px solid rgba(255,255,255, 0.35);
 
+
+}
+
+.header__nav-wrapper{
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -169,6 +179,29 @@ h3{
 
 .header a{
     transition: all 0.25s linear;
+}
+
+.header__phone{
+    order: -1;
+}
+
+.header .header__logo.swap{
+    display: none;
+}
+
+.header__controls-label{
+    display: none;
+}
+
+.header__navigation-controls{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+
 }
 
 .header a:hover{
@@ -213,11 +246,12 @@ h3{
 .carousel-container{
     position: relative;
     margin: 0 auto 80px;
+    max-width: 100%;
 }
 
 .carousel{
     position: relative;
-    width: 800px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -321,7 +355,7 @@ h3{
     background-image: url(../assets/about-section-bg.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center bottom 105px;
+    background-position: center bottom 135px;
 }
 
 .about .title--section{
@@ -337,11 +371,10 @@ h3{
 
 .about__feedback-item{
     background: transparent;
-    flex-basis: 25%;
+    flex-basis: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     border-radius: 8px;
 
     font-family: 'Merriweather Bold', serif;
@@ -369,7 +402,7 @@ h3{
     background-color: $color-accent1;
     border-radius: 8px;
     padding: 35px 20px;
-    width: 600px;
+    max-width: 600px;
     position: relative;
     top: 50px;
     text-align: center;
@@ -380,6 +413,7 @@ h3{
     background-color: $color-bg-gray;
     padding: 90px 35px 50px;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     gap: 0px 40px;
     max-height: 750px;
@@ -391,10 +425,11 @@ h3{
     }
 
     & > div:first-child{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: start;
+        flex-basis: 50%;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-start;
+        // justify-content: start;
     }
 }
 
@@ -687,6 +722,7 @@ h3{
 .mail{
     padding-top: 50px;
     padding-bottom: 50px;
+    text-align: center;
 
     background-color: $color-bg-gray;
 }
@@ -715,7 +751,8 @@ h3{
 }
 
 .mail .mail__form{
-    width: 500px;
+    min-width: 50%;
+    max-width: 500px;
 
     & button{
         display: block;
@@ -758,8 +795,9 @@ h3{
 
 .footer{
     display: flex;
-    justify-content: space-around;
-    padding: 80px 15% 60px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 80px 5% 60px;
 }
 
 .footer > a{
@@ -769,6 +807,10 @@ h3{
     position: relative;
     bottom: 35px;
     right: 20px;
+}
+
+.footer__nav-wraper{
+    display: flex;
 }
 
 .footer__nav{
@@ -786,7 +828,7 @@ h3{
 }
 
 
-.footer__socials{
+.socials{
     flex: 0 1 auto;
     gap: 10px 0px;
     display: flex;
@@ -798,7 +840,13 @@ h3{
     }
 }
 
-.footer__socials-logos{
+.header .socials{
+    display: none;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.socials-logos{
     display: flex;
     gap: 20px;
     font-size: 40px;
@@ -809,5 +857,185 @@ h3{
 
     & a i:hover{
         color:#dbd0bd;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+
+
+    .container{
+        padding: 0px 10px;
+    }
+
+
+    .button{
+        font-size: 16px;
+    }
+
+    
+
+
+    .add-input{
+        
+        & .add-control{
+            height: 30px;
+            font-size: 18px;
+        }
+    
+        & .add-input__btn{
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+            margin: 5px;
+        }
+    }
+    
+    
+    .footer .footer__nav{
+        margin-right: 20px;
+    }
+
+    .socials-logos{
+        font-size: 25px;
+        gap: 10px;
+    }
+    
+}
+
+
+@media screen and (max-width: 650px){
+
+    .about{
+        background-image: none;
+        padding-bottom: 50px;
+    }
+
+    .about__feedback-container{
+        gap: 30px 0px;
+    }
+
+    .header{
+        background: linear-gradient(rgba(0,0,0, 0.8) 50%,rgba(0,0,0, 0.0));
+        border: none;
+        justify-content: space-between;
+    }
+    
+
+    
+    
+    .header__phone{
+        order: 5;
+    }
+
+
+    .header__nav-wrapper{
+        align-items: flex-end;
+        background: linear-gradient(270deg, rgba(0,0,0, 0.7), rgba(0,0,0,0));
+        backdrop-filter: blur(2px);
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 95px 20px 30px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        text-align: right;
+
+        & .header__logo{
+            display: none;
+        }
+
+        & .header__navigation ul{
+            flex-direction: column;
+
+        }
+
+        & .header__navigation ul li{
+            margin-bottom: 30px;
+        }
+    }
+
+    .header .header__logo.swap{
+        display: block;
+        position: relative;
+        z-index: 99;
+    }
+
+    .header .socials{
+        display: block;
+    }
+
+    .header__controls-label{
+        display: block;
+        z-index: 99;
+
+        & i{
+            font-size: 28px;
+        }
+    }
+    .header__navigation-controls:checked + .header__nav-wrapper{
+        transform: translateX(0%);
+    }
+    
+
+
+
+    .about__feedback-container{
+        flex-direction: column;
+    }
+
+    .about__feedback-item img{
+        max-width: 50px;
+    }
+
+
+
+    .dish__flex-container{
+        flex-direction: column;
+        max-height: 600px;
+        overflow: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+
+        & > div:last-child{
+            padding: 0px 10px;
+        }
+    }
+
+    .dish__flex-container img{
+        height: auto;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    
+
+    .menu-popular__grid-container{
+        display: flex;flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .promo, .about{
+        text-align: center;
+    }
+
+    
+    
+    .carousel-container .button{
+        bottom: 30px;
+    }
+
+    .carousel{
+        border: none;
+    }
+
+    .carousel .slider-item{
+        height: auto;
     }
 }
